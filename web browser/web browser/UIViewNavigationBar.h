@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UIViewNavigationBar.h
 //  web browser
 //
 //  Created by Alberto Scampini on 29/10/14.
@@ -8,11 +8,6 @@
 
 @import UIKit;
 
-@class UIViewMain;
-
-@interface ViewController : UIViewController
-
-@property (nonatomic) UIViewMain *webBrowserView;
+@interface UIViewNavigationBar : UIView
 
 @end
-

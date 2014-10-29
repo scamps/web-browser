@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UIViewBrowser.h
 //  web browser
 //
 //  Created by Alberto Scampini on 29/10/14.
@@ -7,12 +7,10 @@
 //
 
 @import UIKit;
+@import WebKit;
 
-@class UIViewMain;
+@interface UIViewBrowser : UIView
 
-@interface ViewController : UIViewController
-
-@property (nonatomic) UIViewMain *webBrowserView;
+@property (nonatomic) UIWebView *webBrowserPage;
 
 @end
-

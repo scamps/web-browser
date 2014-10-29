@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIViewMain.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    // create and add main view in full screen size
+    _webBrowserView=[[UIViewMain alloc]initWithFrame:self.view.frame];
+    [self.view addSubview:_webBrowserView];
 }
 
 - (void)didReceiveMemoryWarning {
