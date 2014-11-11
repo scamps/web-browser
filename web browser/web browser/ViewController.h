@@ -7,14 +7,20 @@
 //
 
 @import UIKit;
+#import "UIViewMain.h"
+#import "UIViewNavigationBar.h"
+#import "UIViewHistoryList.h"
 
 @class UIViewMain;
 @class UIViewNavigationBar;
+@class UIViewHistoryList;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIWiewMainDelegate,UIWiewNavigationBarDelegate,UIWiewHistoryDelegate>
 
 @property (nonatomic) UIViewMain *mainBrowserView;
 @property (nonatomic) UIViewNavigationBar *browserNavigationBar;
-@property(nonatomic)BOOL isfullScreenModeActive;
+@property (nonatomic) UIViewHistoryList *historyList;
+@property (nonatomic)BOOL isHistoryViewShown;
+@property (nonatomic)BOOL isfullScreenModeActive;
 
 @end

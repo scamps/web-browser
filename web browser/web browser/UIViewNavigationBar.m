@@ -10,6 +10,7 @@
 
 
 @implementation UIViewNavigationBar
+@synthesize delegate;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -39,6 +40,28 @@
         _websiteUrl.layer.borderWidth= 1.0f;
         _websiteUrl.textColor=[UIColor whiteColor];
         [self addSubview:_websiteUrl];
+        
+        //add chronology/history button on navigation bar
+        _historyButton=[[UIButton alloc]initWithFrame:CGRectMake(5,0,50,50)];
+        [_historyButton.titleLabel setFont:[UIFont fontWithName:@"Arial" size:12]];
+        [_historyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _historyButton.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
+        //[_historyButton setBackgroundImage:[self ColorImage:@"bt_history.png" with_color:[UIColor whiteColor]] forState:UIControlStateNormal];
+        [_historyButton setTitle:@"History" forState:UIControlStateNormal];
+        [_historyButton addTarget:self action:@selector(historyButtonClicked) forControlEvents:UIControlEventTouchUpInside];//creo l azione di risposta
+        //_historyButton.alpha=0.7;
+        [self addSubview:_historyButton];
+        
+        //add home button on navigation bar
+        _homeButton=[[UIButton alloc]initWithFrame:CGRectMake(60,0,50,50)];
+        [_homeButton.titleLabel setFont:[UIFont fontWithName:@"Arial" size:12]];
+        [_homeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _homeButton.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
+        //[_homeButton setBackgroundImage:[self ColorImage:@"bt_home.png" with_color:[UIColor whiteColor]] forState:UIControlStateNormal];
+        [_homeButton setTitle:@"Home" forState:UIControlStateNormal];
+        [_homeButton addTarget:self action:@selector(homeButtonClicked) forControlEvents:UIControlEventTouchUpInside];//creo l azione di risposta
+        //_homeButton.alpha=0.7;
+        [self addSubview:_homeButton];
     }
     return self;
 }
@@ -67,4 +90,13 @@
                     completion:nil];
 }
 
+#pragma navigation bar button response
+
+- (void)historyButtonClicked{
+    [delegate clickedNavigationBarButtonAtIndex:0];
+}
+
+- (void)homeButtonClicked{
+    [delegate clickedNavigationBarButtonAtIndex:1];
+}
 @end

@@ -10,6 +10,7 @@
 #import "UIViewBrowser.h"
 
 @implementation UIViewMain
+@synthesize delegate;
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -25,6 +26,7 @@
     if (self) {
         // create and add webBrowserView in full screen
         _webBrowserView=[[UIViewBrowser alloc]initWithFrame:CGRectMake(0, 60, self.frame.size.width,self.frame.size.height-60)];
+        _webBrowserView.delegate=self;
         [self addSubview:_webBrowserView];
         
         //hide statusbar
@@ -68,6 +70,11 @@
                         //resize web browser
                         [_webBrowserView updatePageFrameDimension:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-60)];
                     }];
+}
+
+#pragma UIViewBrowser delegate methods
+- (void)changedWebUrl:(NSString *)Url{
+    [delegate changeNavigationBarUrl:Url];
 }
 
 @end

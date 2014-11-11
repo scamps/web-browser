@@ -11,6 +11,10 @@
 		8054587B1A0115960055C0E9 /* UIViewBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8054587A1A0115960055C0E9 /* UIViewBrowser.m */; };
 		8054587D1A0115BA0055C0E9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8054587C1A0115BA0055C0E9 /* WebKit.framework */; };
 		805458801A0131E00055C0E9 /* UIViewNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8054587F1A0131E00055C0E9 /* UIViewNavigationBar.m */; };
+		806098061A122B2C004CFC4C /* NSHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 806098051A122B2C004CFC4C /* NSHistoryManager.m */; };
+		806098091A122B60004CFC4C /* NSPageHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 806098081A122B60004CFC4C /* NSPageHistory.m */; };
+		8060980D1A1239CF004CFC4C /* UIViewHistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060980C1A1239CF004CFC4C /* UIViewHistoryList.m */; };
+		806098161A124B63004CFC4C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 806098151A124B63004CFC4C /* Cell.m */; };
 		806584E71A01067B0053B28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 806584E61A01067B0053B28F /* main.m */; };
 		806584EA1A01067B0053B28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 806584E91A01067B0053B28F /* AppDelegate.m */; };
 		806584ED1A01067B0053B28F /* web_browser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 806584EB1A01067B0053B28F /* web_browser.xcdatamodeld */; };
@@ -38,6 +42,14 @@
 		8054587C1A0115BA0055C0E9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		8054587E1A0131E00055C0E9 /* UIViewNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewNavigationBar.h; sourceTree = "<group>"; };
 		8054587F1A0131E00055C0E9 /* UIViewNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewNavigationBar.m; sourceTree = "<group>"; };
+		806098041A122B2C004CFC4C /* NSHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHistoryManager.h; sourceTree = "<group>"; };
+		806098051A122B2C004CFC4C /* NSHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHistoryManager.m; sourceTree = "<group>"; };
+		806098071A122B60004CFC4C /* NSPageHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPageHistory.h; sourceTree = "<group>"; };
+		806098081A122B60004CFC4C /* NSPageHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPageHistory.m; sourceTree = "<group>"; };
+		8060980B1A1239CF004CFC4C /* UIViewHistoryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewHistoryList.h; sourceTree = "<group>"; };
+		8060980C1A1239CF004CFC4C /* UIViewHistoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewHistoryList.m; sourceTree = "<group>"; };
+		806098141A124B63004CFC4C /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		806098151A124B63004CFC4C /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
 		806584E11A01067B0053B28F /* web browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "web browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		806584E51A01067B0053B28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		806584E61A01067B0053B28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +84,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		806098011A122A89004CFC4C /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				8054587E1A0131E00055C0E9 /* UIViewNavigationBar.h */,
+				8054587F1A0131E00055C0E9 /* UIViewNavigationBar.m */,
+			);
+			name = NavigationBar;
+			sourceTree = "<group>";
+		};
+		806098021A122AC0004CFC4C /* WebPages */ = {
+			isa = PBXGroup;
+			children = (
+				805458761A0112830055C0E9 /* UIViewMain.h */,
+				805458771A0112830055C0E9 /* UIViewMain.m */,
+				805458791A0115960055C0E9 /* UIViewBrowser.h */,
+				8054587A1A0115960055C0E9 /* UIViewBrowser.m */,
+			);
+			name = WebPages;
+			sourceTree = "<group>";
+		};
+		806098031A122AD9004CFC4C /* History */ = {
+			isa = PBXGroup;
+			children = (
+				8060980A1A123999004CFC4C /* DataModelClass */,
+				8060980B1A1239CF004CFC4C /* UIViewHistoryList.h */,
+				8060980C1A1239CF004CFC4C /* UIViewHistoryList.m */,
+				806098141A124B63004CFC4C /* Cell.h */,
+				806098151A124B63004CFC4C /* Cell.m */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		8060980A1A123999004CFC4C /* DataModelClass */ = {
+			isa = PBXGroup;
+			children = (
+				806098041A122B2C004CFC4C /* NSHistoryManager.h */,
+				806098051A122B2C004CFC4C /* NSHistoryManager.m */,
+				806098071A122B60004CFC4C /* NSPageHistory.h */,
+				806098081A122B60004CFC4C /* NSPageHistory.m */,
+			);
+			name = DataModelClass;
+			sourceTree = "<group>";
+		};
 		806584D81A01067B0053B28F = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +155,9 @@
 				806584EF1A01067B0053B28F /* ViewController.m */,
 				806584F11A01067B0053B28F /* Main.storyboard */,
 				806584F41A01067B0053B28F /* Images.xcassets */,
-				805458761A0112830055C0E9 /* UIViewMain.h */,
-				805458771A0112830055C0E9 /* UIViewMain.m */,
-				805458791A0115960055C0E9 /* UIViewBrowser.h */,
-				8054587A1A0115960055C0E9 /* UIViewBrowser.m */,
-				8054587E1A0131E00055C0E9 /* UIViewNavigationBar.h */,
-				8054587F1A0131E00055C0E9 /* UIViewNavigationBar.m */,
+				806098021A122AC0004CFC4C /* WebPages */,
+				806098011A122A89004CFC4C /* NavigationBar */,
+				806098031A122AD9004CFC4C /* History */,
 				806584EB1A01067B0053B28F /* web_browser.xcdatamodeld */,
 				806584E41A01067B0053B28F /* Supporting Files */,
 			);
@@ -238,9 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806098161A124B63004CFC4C /* Cell.m in Sources */,
 				805458801A0131E00055C0E9 /* UIViewNavigationBar.m in Sources */,
+				8060980D1A1239CF004CFC4C /* UIViewHistoryList.m in Sources */,
 				806584EA1A01067B0053B28F /* AppDelegate.m in Sources */,
 				806584ED1A01067B0053B28F /* web_browser.xcdatamodeld in Sources */,
+				806098061A122B2C004CFC4C /* NSHistoryManager.m in Sources */,
+				806098091A122B60004CFC4C /* NSPageHistory.m in Sources */,
 				806584F01A01067B0053B28F /* ViewController.m in Sources */,
 				8054587B1A0115960055C0E9 /* UIViewBrowser.m in Sources */,
 				805458781A0112830055C0E9 /* UIViewMain.m in Sources */,
