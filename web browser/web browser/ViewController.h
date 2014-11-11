@@ -9,10 +9,12 @@
 @import UIKit;
 
 @class UIViewMain;
+@class UIViewNavigationBar;
 
 @interface ViewController : UIViewController
 
-@property (nonatomic) UIViewMain *webBrowserView;
+@property (nonatomic) UIViewMain *mainBrowserView;
+@property (nonatomic) UIViewNavigationBar *browserNavigationBar;
+@property(nonatomic)BOOL isfullScreenModeActive;
 
 @end
-

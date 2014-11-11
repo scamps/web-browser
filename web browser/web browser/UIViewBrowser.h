@@ -9,8 +9,13 @@
 @import UIKit;
 @import WebKit;
 
-@interface UIViewBrowser : UIView
+@interface UIViewBrowser : UIView<UIWebViewDelegate>
 
 @property (nonatomic) UIWebView *webBrowserPage;
+@property (nonatomic) NSString *currentUrl;
+
+- (void)loadWebPageFromUrl:(NSString *)Url;
+- (void)removeGestureRecognizerFromWebPages:(UIGestureRecognizer *)gestureRecognizer;
+- (void)updatePageFrameDimension:(CGRect)newFrame;
 
 @end

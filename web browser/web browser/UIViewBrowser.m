@@ -24,18 +24,31 @@
     if (self) {
         // Initialization code for the UIWebView
         _webBrowserPage=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width,self.frame.size.height)];
-        //allow pinch to zoom
+        _webBrowserPage.backgroundColor=[UIColor blackColor];
         _webBrowserPage.scalesPageToFit=YES;
+        _webBrowserPage.delegate=self;
         [self addSubview:_webBrowserPage];
-        
-        //prepare the first page url and request
-        NSString *url=@"http://www.google.it";
-        NSURL *nsurl=[NSURL URLWithString:url];
-        NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
-        //navigate to first page url
-        [_webBrowserPage loadRequest:nsrequest];
+        self.backgroundColor=[UIColor redColor];
     }
     return self;
+}
+
+- (void)loadWebPageFromUrl:(NSString *)Url{
+    //navigate to the page url
+    NSURL *nsurl=[NSURL URLWithString:Url];
+    NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
+    [_webBrowserPage loadRequest:nsrequest];
+    _currentUrl=Url;
+}
+
+- (void)removeGestureRecognizerFromWebPages:(UIGestureRecognizer *)gestureRecognizer{
+    [_webBrowserPage.scrollView.panGestureRecognizer requireGestureRecognizerToFail:gestureRecognizer];
+    
+}
+
+- (void)updatePageFrameDimension:(CGRect)newFrame{
+    //update the dimensions of the uiwebview to the new size
+    _webBrowserPage.frame=newFrame;
 }
 
 @end

@@ -14,4 +14,9 @@
 
 @property (nonatomic) UIViewBrowser *webBrowserView;//view that show the pages of the web browser
 
+- (void)setWebsiteUrlForBrowser:(NSString *)Url;
+- (void)removeGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer;
+- (void)switchOnFullScreenMode;
+- (void)switchOffFullScreenMode;
+
 @end

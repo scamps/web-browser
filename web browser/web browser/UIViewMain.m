@@ -24,11 +24,50 @@
     self = [super initWithFrame:frame];
     if (self) {
         // create and add webBrowserView in full screen
-        _webBrowserView=[[UIViewBrowser alloc]initWithFrame:self.frame];
+        _webBrowserView=[[UIViewBrowser alloc]initWithFrame:CGRectMake(0, 60, self.frame.size.width,self.frame.size.height-60)];
         [self addSubview:_webBrowserView];
+        
         //hide statusbar
         [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+        
     }
     return self;
 }
+
+- (void)setWebsiteUrlForBrowser:(NSString *)Url{
+    [_webBrowserView loadWebPageFromUrl:Url];
+}
+
+- (void)removeGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer{
+    //remove gesture recogniser from UIViewBrowser
+    [_webBrowserView removeGestureRecognizerFromWebPages:gestureRecognizer];
+}
+
+- (void)switchOnFullScreenMode{
+    //resize web browser view
+    UIViewAnimationOptions option = UIViewAnimationOptionOverrideInheritedDuration;
+    [UIView transitionWithView:_webBrowserView
+                      duration:0.3
+                       options:option
+                    animations:^{_webBrowserView.frame=CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);}
+                    completion:nil];
+    //resize web browser
+    [_webBrowserView updatePageFrameDimension:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    
+    
+}
+
+- (void)switchOffFullScreenMode{
+    //resize web browser view
+    UIViewAnimationOptions option = UIViewAnimationOptionOverrideInheritedDuration;
+    [UIView transitionWithView:_webBrowserView
+                      duration:0.3
+                       options:option
+                    animations:^{_webBrowserView.frame=CGRectMake(0, 60, self.frame.size.width, self.frame.size.height-60);}
+                    completion:^(BOOL finished){
+                        //resize web browser
+                        [_webBrowserView updatePageFrameDimension:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-60)];
+                    }];
+}
+
 @end
