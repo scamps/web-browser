@@ -32,6 +32,7 @@
         //create texfield containing url of current website
         _websiteUrl=[[UITextField alloc] initWithFrame:CGRectMake(5 + 50 + 5 + 50 + 5 + 50 + 5, 20, self.frame.size.width-170 - 10, self.frame.size.height-30)];//this is temp of course
         //personalize border and color of url textfild
+        _websiteUrl.enabled=false;
         _websiteUrl.BorderStyle=UITextBorderStyleRoundedRect;
         _websiteUrl.layer.cornerRadius=8.0f;
         _websiteUrl.layer.masksToBounds=YES;
@@ -46,7 +47,7 @@
         [_historyButton.titleLabel setFont:[UIFont fontWithName:@"Arial" size:12]];
         [_historyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _historyButton.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
-        //[_historyButton setBackgroundImage:[self ColorImage:@"bt_history.png" with_color:[UIColor whiteColor]] forState:UIControlStateNormal];
+        [_historyButton setBackgroundImage:[UIImage imageNamed:@"clock-50.png"] forState:UIControlStateNormal];
         [_historyButton setTitle:@"History" forState:UIControlStateNormal];
         [_historyButton addTarget:self action:@selector(historyButtonClicked) forControlEvents:UIControlEventTouchUpInside];//creo l azione di risposta
         //_historyButton.alpha=0.7;
@@ -57,7 +58,7 @@
         [_homeButton.titleLabel setFont:[UIFont fontWithName:@"Arial" size:12]];
         [_homeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _homeButton.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
-        //[_homeButton setBackgroundImage:[self ColorImage:@"bt_home.png" with_color:[UIColor whiteColor]] forState:UIControlStateNormal];
+        [_homeButton setBackgroundImage:[UIImage imageNamed:@"home-50.png"] forState:UIControlStateNormal];
         [_homeButton setTitle:@"Home" forState:UIControlStateNormal];
         [_homeButton addTarget:self action:@selector(homeButtonClicked) forControlEvents:UIControlEventTouchUpInside];//creo l azione di risposta
         //_homeButton.alpha=0.7;
@@ -99,4 +100,5 @@
 - (void)homeButtonClicked{
     [delegate clickedNavigationBarButtonAtIndex:1];
 }
+
 @end

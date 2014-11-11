@@ -82,6 +82,8 @@
 
 - (void)tapDoubleTouches:(UITapGestureRecognizer *)recognizer
 {
+    //close the history view
+    [self closehistoryList];
     //gestion for switching between fullscreen and normal visualization
     if(_isfullScreenModeActive==false){
         [_browserNavigationBar hideBarWithAnimation];
@@ -111,14 +113,12 @@
             //show hide
             if(_isHistoryViewShown==false){
                 //create history list
-                _historyList=[[UIViewHistoryList alloc]initWithFrame:CGRectMake(0, 60, 300, self.view.frame.size.height-60)];
+                _historyList=[[UIViewHistoryList alloc]initWithFrame:CGRectMake(0, 60, 250, self.view.frame.size.height-60)];
                 _historyList.delegate=self;
                 [self.view addSubview:_historyList];
                 _isHistoryViewShown=true;
             }else{
-                _isHistoryViewShown=false;
-                //remove history list
-                [_historyList removeFromSuperview];
+                [self closehistoryList];
             }
             break;}
         case 1:{//selected home button
@@ -131,13 +131,19 @@
     }
 }
 
-#pragma UIViewHistoryList delegate methods
+#pragma UIViewHistoryList delegate and methods
 
 - (void)selectedHistoryUrl:(NSString *)Url
 {
     [_mainBrowserView setWebsiteUrlForBrowser:Url];
+    //close the history view
+    [self closehistoryList];
+}
+
+- (void)closehistoryList
+{
+    //close the history view
     _isHistoryViewShown=false;
     [_historyList removeFromSuperview];
 }
-
 @end

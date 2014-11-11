@@ -52,8 +52,6 @@
     NSHistoryManager * historyManagerSaver=[[NSHistoryManager alloc]init];
     NSPageHistory * currentPageInformations=[historyManagerSaver loadPageHistoryFromIndex:(_numberOfPagesInHistory-(int)indexPath.row-1)];
     
-    NSLog(@"load-> %@ , %@",currentPageInformations.pagePreviewPictureName,currentPageInformations.pageTitle);
-    
     //load picture
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,     NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];

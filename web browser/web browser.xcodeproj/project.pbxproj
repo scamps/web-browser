@@ -15,6 +15,8 @@
 		806098091A122B60004CFC4C /* NSPageHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 806098081A122B60004CFC4C /* NSPageHistory.m */; };
 		8060980D1A1239CF004CFC4C /* UIViewHistoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8060980C1A1239CF004CFC4C /* UIViewHistoryList.m */; };
 		806098161A124B63004CFC4C /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 806098151A124B63004CFC4C /* Cell.m */; };
+		806098211A127130004CFC4C /* clock-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 8060981F1A127130004CFC4C /* clock-50.png */; };
+		806098221A127130004CFC4C /* home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 806098201A127130004CFC4C /* home-50.png */; };
 		806584E71A01067B0053B28F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 806584E61A01067B0053B28F /* main.m */; };
 		806584EA1A01067B0053B28F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 806584E91A01067B0053B28F /* AppDelegate.m */; };
 		806584ED1A01067B0053B28F /* web_browser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 806584EB1A01067B0053B28F /* web_browser.xcdatamodeld */; };
@@ -50,6 +52,8 @@
 		8060980C1A1239CF004CFC4C /* UIViewHistoryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewHistoryList.m; sourceTree = "<group>"; };
 		806098141A124B63004CFC4C /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
 		806098151A124B63004CFC4C /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		8060981F1A127130004CFC4C /* clock-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock-50.png"; sourceTree = "<group>"; };
+		806098201A127130004CFC4C /* home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-50.png"; sourceTree = "<group>"; };
 		806584E11A01067B0053B28F /* web browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "web browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		806584E51A01067B0053B28F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		806584E61A01067B0053B28F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 			children = (
 				8054587E1A0131E00055C0E9 /* UIViewNavigationBar.h */,
 				8054587F1A0131E00055C0E9 /* UIViewNavigationBar.m */,
+				8060981F1A127130004CFC4C /* clock-50.png */,
+				806098201A127130004CFC4C /* home-50.png */,
 			);
 			name = NavigationBar;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806098211A127130004CFC4C /* clock-50.png in Resources */,
+				806098221A127130004CFC4C /* home-50.png in Resources */,
 				806584F31A01067B0053B28F /* Main.storyboard in Resources */,
 				806584F51A01067B0053B28F /* Images.xcassets in Resources */,
 			);

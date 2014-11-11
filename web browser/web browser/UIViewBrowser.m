@@ -111,7 +111,6 @@
     
     [_timerSave invalidate];
     _timerSave=nil;
-    NSLog(@"save-> %@ , %@ ",currentPageInformations.pagePreviewPictureName,currentPageInformations.pageTitle);
 }
 
 -(UIImage*)captureScreen:(UIView*) viewToCapture
